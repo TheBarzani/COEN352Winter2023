@@ -36,3 +36,4 @@ bin/
 
 # Windows Garbage
 .vscode/
+*.pptx
