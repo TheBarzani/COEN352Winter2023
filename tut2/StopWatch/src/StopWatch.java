@@ -1,20 +1,15 @@
-package Timer.lib;
+package StopWatch.src;
+
+enum TimeType {
+    nanoSeconds, milliSeconds, seconds
+}
 
 public class StopWatch {
-    
-    /*Note: Enum::TimeType can either be defined here or in its own file*/ 
-    public enum TimeType {
-        nanoSeconds, milliSeconds, seconds
-    }
-    long start;
-    long end;
-    TimeType timeType;
 
-    //Constructor
-    public StopWatch(TimeType t) {
+    public StopWatch(TimeType _timeType) {
         start= 0;
         end=  0;
-        timeType = t ;
+        timeType=_timeType;
     }
 
     public void start() {
@@ -37,6 +32,7 @@ public class StopWatch {
         else
             return end-start;
     }
-
+    long start;
+    long end;
+    TimeType timeType;
 }
-
