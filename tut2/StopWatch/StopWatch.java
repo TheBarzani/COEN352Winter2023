@@ -1,10 +1,10 @@
-package StopWatch.src;
-
-enum TimeType {
-    nanoSeconds, milliSeconds, seconds
-}
+package tut2.StopWatch;
 
 public class StopWatch {
+    /*An enum shall either be in its own file or inside a class */
+    public enum TimeType {
+        nanoSeconds, milliSeconds, seconds
+    }
 
     public StopWatch(TimeType _timeType) {
         start= 0;

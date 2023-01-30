@@ -1,4 +1,4 @@
-package StopWatch.src;
+package tut2.StopWatch;
 
 /* This piece code demonstrates how to use the system utilities to measure
  * the time taken to execute a piece of code.
@@ -9,7 +9,7 @@ package StopWatch.src;
 public class ElapsedTime {
     public static void main(String[] args) throws Exception {
         /*Available Formats: TimeType.seconds, TimeType.milliSeconds, TimeType.nanoSeconds.*/
-        StopWatch watch = new StopWatch(TimeType.nanoSeconds);
+        StopWatch watch = new StopWatch(StopWatch.TimeType.nanoSeconds);
         watch.start();
         // some code
         watch.stop();
