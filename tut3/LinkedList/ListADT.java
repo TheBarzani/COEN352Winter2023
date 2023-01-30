@@ -8,8 +8,8 @@ public interface ListADT<T> {
     /**Return an element from the list at the end position. */
     public T get();
 
-    /**Return an element from the list at the end position. */
-    public boolean insert(int p);
+    /**Insert an element at the end position. */
+    public boolean insert(T t);
 
     /**Remove the first occurrence of any element from a non-empty list. */
     public T remove(T t);
