@@ -10,8 +10,8 @@ public class FibonacciNumber {
     public static void main(String[] args) {
         //fibonacci series --> 0,1,1,2,3,5,8,13. . . .
         //fibonacciNumber(0) represents 0th fibonacci number, fibonacciNumber(6) represents 5th fibonacci number with zero based index. i.e., 8
-        System.out.println("Fibonacci Series for 10 numbers");
-        int fibonacciSeriesLength = 11;
+        System.out.println("Fibonacci Series for 19 numbers");
+        int fibonacciSeriesLength = 19;
         for (int i = 0; i < fibonacciSeriesLength; i++) {
             int temp= fibonacciNumber(i);
             System.out.print( temp + ",");

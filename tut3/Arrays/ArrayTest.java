@@ -1,6 +1,7 @@
 package tut3.Arrays;
+
 import java.util.Random;
-import tut2.StopWatch.*;
+import tut2.StopWatch.StopWatch;
 import tut2.StopWatch.StopWatch.TimeType;
 
 public class ArrayTest {
