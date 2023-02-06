@@ -1,6 +1,20 @@
 # COEN-352 Winter 2023 Tutorials
-***All of the resources for COEN-352 tutorials***
+***A project created to demonstrate DSA in JAVA. This REPO was created for COEN352 Tutorials and it contains all the resources and materials introduced in the tutorials.***
+## **How to navigate this REPO**
+This repo is structured as an informal JAVA project which can be imported as an Eclipse or VScode JAVA project. 
 
+**/src/** contains the source code presented in each tutorial as well as the corresponding tutorial slides and material. The material per tutorial session is stored in the corresponding tutorial folder, formatted as **/src/tut#**. Lastly, recommended and complementary resources are listed below.
+
+### Importing as an Eclipse JAVA project:
+
+1. Download this repo as ZIP file and extract it into your working directory **OR** just clone the repo using `git`.
+2. Rename the repo/folder name from **COEN352Winter2023-main** to **COEN352Winter2023**.
+2. Open Eclipse and set the parent folder of the repo (repo's location) as your workspace directory.
+3. Create a JAVA project and name it **COEN352Winter2023**. (This should import the project automatically.)
+4. Try to run any java files in the **/src/** folder and enjoy.
+---
+
+## **RESOURCES**
 ## JAVA installation 
 ### Windows
 - **Oracle-JDK Compiler for JAVA-17**: https://www.oracle.com/ca-en/java/technologies/downloads/#jdk17-windows
