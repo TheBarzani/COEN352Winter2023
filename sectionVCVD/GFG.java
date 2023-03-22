@@ -1,68 +1,76 @@
-// JavaProgram to convert prefix to postfix
-import java.util.*;
+// A simple inorder traversal based Java program
+// to find k-th smallest element in a BST.
 
-public class GFG {
-
-    // function to check if character
-    // is operator or not
-    static boolean isOperator(char x)
+import java.io.*;
+// A BST node
+class Node1 {
+    int data;
+    Node1 left, right;
+    Node1(int x)
     {
-        switch (x) {
-            case '+':
-            case '-':
-            case '/':
-            case '*':
-                return true;
-        }
-        return false;
-    }
-
-    // Convert prefix to Postfix expression
-    static String preToPost(String pre_exp)
-    {
-
-        Stack<String> s = new Stack<String>();
-
-        // length of expression
-        int length = pre_exp.length();
-
-        // reading from right to left
-        for (int i = length - 1; i >= 0; i--)
-        {
-            // check if symbol is operator
-            if (isOperator(pre_exp.charAt(i)))
-            {
-                // pop two operands from stack
-                String op1 = s.peek();
-                s.pop();
-                String op2 = s.peek();
-                s.pop();
-
-                // concat the operands and operator
-                String temp = op1 + op2 + pre_exp.charAt(i);
-
-                // Push String temp back to stack
-                s.push(temp);
-            }
-
-            // if symbol is an operand
-            else {
-                // push the operand to the stack
-                s.push(pre_exp.charAt(i) + "");
-            }
-        }
-
-        // stack contains only the Postfix expression
-        return s.peek();
-    }
-
-    // Driver Code
-    public static void main(String args[])
-    {
-        String pre_exp = "*-A/BC-/AKL";
-        System.out.println("Postfix : "
-                + preToPost(pre_exp));
+        data = x;
+        left = right = null;
     }
 }
 
-// This code is contributed by Arnab Kundu
+public class GFG {
+
+    static int count = 0;
+    // Recursive function to insert an key into BST
+    public static Node1 insert(Node1 root, int x)
+    {
+        if (root == null)
+            return new Node1(x);
+        if (x < root.data)
+            root.left = insert(root.left, x);
+        else if (x > root.data)
+            root.right = insert(root.right, x);
+        return root;
+    }
+
+    // Function to find k'th smallest element in BST
+    // Here count denotes the number of nodes processed so far
+    public static Node1 kthSmallest(Node1 root, int k)
+    {
+        // base case
+        if (root == null)
+            return null;
+
+        // search in left subtree
+        Node1 left = kthSmallest(root.left, k);
+
+        // if k'th smallest is found in left subtree, return it
+        if (left != null)
+            return left;
+
+        // if current element is k'th smallest, return it
+
+        count++;
+        if (count == k)
+            return root;
+
+        // else search in right subtree
+        return kthSmallest(root.right, k);
+    }
+
+    // Function to find k'th smallest element in BST
+    public static void printKthSmallest(Node1 root, int k)
+    {
+        Node1 res = kthSmallest(root, k);
+        if (res == null)
+            System.out.println("There are less than k nodes in the BST");
+        else
+            System.out.println("K-th Smallest Element is " + res.data);
+    }
+
+    public static void main(String[] args)
+    {
+        Node1 root = null;
+        int keys[] = { 20, 8, 22, 4, 12, 10, 14 };
+        for (int x : keys)
+            root = insert(root, x);
+        int k = 8;
+        printKthSmallest(root, k);
+    }
+}
+
