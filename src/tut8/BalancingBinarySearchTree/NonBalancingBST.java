@@ -161,12 +161,7 @@ class Main{
     public static void main(String[] args)  { 
        //create a BST object
         NonBalancingBST bst = new NonBalancingBST(); 
-        /* BST tree example
-              45 
-           /     \ 
-          10      90 
-         /  \    /   
-        7   12  50   */
+        /* BST tree example*/
         //insert data into BST
         bst.insert(1); 
         bst.insert(2); 
